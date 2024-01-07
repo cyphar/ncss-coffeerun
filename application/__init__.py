@@ -16,6 +16,10 @@ from flask_session import Session
 
 from flask_sqlalchemy import SQLAlchemy
 
+from werkzeug.middleware.proxy_fix import ProxyFix
+
+app = Flask(__name__)
+
 
 __all__ = [
     'app', 'db', 'lm', 'manager', 'models', 'views',
@@ -24,6 +28,7 @@ __all__ = [
 # Setup app
 app = Flask(__name__)
 app.config.from_object(os.environ.get("FLASK_CONFIG", "config.DevConfig"))
+app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_host=1)
 Bootstrap(app)
 
 babel = Babel(app)
