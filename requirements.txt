@@ -1,3 +1,35 @@
-# Since heroku requires the file to be named requirements.txt, we import the
-# prod config here.
--r requirements/prod.txt
+Flask-Babel>=2.0.0,<2.1
+Flask-Bootstrap==3.3.7
+Flask-Login>=0.5,<0.6
+Flask-Migrate>=2.5,<2.6
+Flask-OAuthlib>=0.9,<1.0
+Flask-SQLAlchemy>=2.4,<2.5
+Flask-Script>=2.0,<2.1
+Flask-Session>=0.3,<0.4
+Flask-Testing>=0.8,<0.9
+Flask-WTF>=0.14,<0.15
+Flask>=1.1,<1.2
+Jinja2>=2.11,<2.12
+MarkupSafe>=1.1,<1.2
+PyRSS2Gen>=1.1,<1.2
+SQLAlchemy>=1.3.22,<1.4
+WTForms>=2.2,<2.3
+Werkzeug>=1.0.1,<1.1
+blinker
+itsdangerous>=1.1,<1.2
+pyOpenSSL>=18.0,<18.1
+python-dateutil>=2.7,<2.8
+pytz>=2018.7
+requests>=2.21,<3
+sentry-sdk>=0.6.6,<0.7
+slackclient>=1.3,<1.4
+sqlalchemy-migrate>=0.11
+virtualenv>=16.2
+
+# To get "simple" flag parsing for the reprice script
+absl-py
+# Linting.
+flake8
+flake8-import-order
+
+gunicorn==19.9

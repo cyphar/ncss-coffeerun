@@ -40,7 +40,6 @@ class TestConfig(Config):
 
 
 class ProdConfig(Config):
-    API_KEY = "AIzaSyDdtXLXJWPJS9bEay-nq0QsAvFxHMvGw3U"
-    DEBUG = True
+    SQLALCHEMY_DATABASE_URI = 'sqlite:////' + os.path.join(CURRENT_DIR, 'application', 'coffeerun-prod.db')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', SQLALCHEMY_DATABASE_URI)
     SESSION_TYPE = 'sqlalchemy'
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
